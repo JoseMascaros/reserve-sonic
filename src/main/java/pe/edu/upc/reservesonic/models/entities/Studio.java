@@ -21,6 +21,15 @@ public class Studio {
 	@Column(name = "name", length = 40)
 	private String name;
 	
+	//OneToMany relationships
+	@OneToMany(mappedBy = "studio")
+	private List<Room> rooms;
+	
+	@OneToMany(mappedBy = "studio")
+	private List<Review> reviews;
+	
+	
+	//ManyToOne relationships
 	@ManyToOne
 	@JoinColumn(name = "district_id", nullable = false)
 	private District district;
@@ -33,9 +42,5 @@ public class Studio {
 	@JoinColumn(name = "admin_id", nullable = false)
 	private Admin admin;
 	
-	@OneToMany(mappedBy = "studio")
-	private List<Room> rooms;
 	
-	@OneToMany(mappedBy = "studio")
-	private List<Review> reviews;
 }

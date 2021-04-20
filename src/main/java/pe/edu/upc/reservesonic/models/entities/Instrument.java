@@ -23,6 +23,7 @@ public class Instrument {
 	@Column(name = "description", length = 120, nullable = false)
 	private String description;
 	
+	//ManyToOne relationships
 	@ManyToOne
 	@JoinColumn(name = "room_id", nullable = false)
 	private Room room;

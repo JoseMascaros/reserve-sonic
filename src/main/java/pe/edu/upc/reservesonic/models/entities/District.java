@@ -20,6 +20,7 @@ public class District {
 	@Column(name = "name", length = 50, nullable = false)
 	private String name;
 	
+	//OneToMany relationships
 	@OneToMany(mappedBy = "district")
 	private List<User> users;
 	
@@ -29,6 +30,7 @@ public class District {
 	@OneToMany(mappedBy = "district")
 	private List<Studio> studios;
 	
+	//ManyToOne relationships
 	@ManyToOne
 	@JoinColumn(name = "region_id", nullable = false)
 	private Region region;

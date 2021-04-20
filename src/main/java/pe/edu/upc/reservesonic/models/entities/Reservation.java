@@ -38,11 +38,15 @@ public class Reservation {
 	@Column(name = "status", length = 35)
 	private String status;
 	
+	//OneToMany relationships
+	@OneToMany(mappedBy = "reservation")
+	private List<Studio> studios;
+	
+	//ManyToOne relationships
 	@ManyToOne
 	@JoinColumn(name = "user_id", nullable=false)
 	private User user;
 	
-	@OneToMany(mappedBy = "reservation")
-	private List<Studio> studios;
+	
 
 }

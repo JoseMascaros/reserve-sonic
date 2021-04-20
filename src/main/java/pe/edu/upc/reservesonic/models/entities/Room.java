@@ -20,11 +20,15 @@ public class Room {
 	@Column(name = "capacity", length = 2, nullable = false)
 	private Integer capacity;
 	
+	//OneToMany relationships
+	@OneToMany(mappedBy = "room")
+	private List<Instrument> instruments;
+
+	//ManyToOne relationships
 	@ManyToOne
 	@JoinColumn(name = "studio_id")
 	private Studio studio;
 	
-	@OneToMany(mappedBy = "room")
-	private List<Instrument> instruments;
+	
 	
 }
