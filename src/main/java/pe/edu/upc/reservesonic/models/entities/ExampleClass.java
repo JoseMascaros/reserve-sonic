@@ -6,4 +6,7 @@ public class ExampleClass {
 	public ExampleClass() {
 		
 	}
+	
+	//Jose Mascaro aprendio git
+	
 }
