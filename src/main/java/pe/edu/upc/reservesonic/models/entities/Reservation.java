@@ -14,7 +14,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import com.sun.jdi.connect.Connector.BooleanArgument;
 
 @Entity
 @Table(name = "Reservations")
@@ -39,11 +38,11 @@ public class Reservation {
 	@Column(name = "status", length = 35)
 	private String status;
 	
-	//@ManyToOne
-	//@JoinColumn(name = "user_id",nullable=false)
-	//private User user;
+	@ManyToOne
+	@JoinColumn(name = "user_id", nullable=false)
+	private User user;
 	
-	//@OneToMany(mappedBy = "reservation")
-	//private List<Studio> studios;
+	@OneToMany(mappedBy = "reservation")
+	private List<Studio> studios;
 
 }

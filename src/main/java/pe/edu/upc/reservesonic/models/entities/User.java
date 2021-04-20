@@ -9,14 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Users")
-
 public class User {
 		
 	@Id
@@ -36,11 +33,15 @@ public class User {
 	@Column(name = "description", length = 70, nullable = false)
 	private String description;
 	
-	//@ManyToOne
-	//@JoinColumn(name = "district_id",nullable = false)
-	//private District district;
+	@ManyToOne
+	@JoinColumn(name = "district_id", nullable = false)
+	private District district;
 	
-	//@OneToMany(mappedBy = "user")
-	//private List<Reservation>reservation;
+	@OneToMany(mappedBy = "user")
+	private List<Reservation>reservation;
+	
+	@OneToMany(mappedBy = "user")
+	private List<Review> reviews;
+	
 
 }
