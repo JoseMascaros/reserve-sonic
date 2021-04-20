@@ -7,6 +7,11 @@ public class ExampleClass {
 		
 	}
 	
-	
+
 	//Cesar Tello aprendio git
+
+	//Jose Mascaro aprendio git
+	
+	//Yadira Lopez aprendio git
+	
 }
