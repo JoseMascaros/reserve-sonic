@@ -17,6 +17,7 @@ public class Review {
 	@Column(name = "content", length = 50, nullable = false)
 	private String name;
 	
+	//ManyToOne relathionships
 	@ManyToOne
 	@JoinColumn(name = "studio_id", nullable = false)
 	private Studio studio;

@@ -18,6 +18,7 @@ public class Region {
 	@Column(name = "name", length = 50, nullable = false)
 	private String name;
 	
+	//OneToMany relationships
 	@OneToMany(mappedBy = "region")
 	private List<District> districts;
 

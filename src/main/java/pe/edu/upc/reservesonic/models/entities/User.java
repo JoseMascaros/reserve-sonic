@@ -33,15 +33,19 @@ public class User {
 	@Column(name = "description", length = 70, nullable = false)
 	private String description;
 	
-	@ManyToOne
-	@JoinColumn(name = "district_id", nullable = false)
-	private District district;
-	
+	//OneToMany relationships
 	@OneToMany(mappedBy = "user")
 	private List<Reservation>reservation;
 	
 	@OneToMany(mappedBy = "user")
 	private List<Review> reviews;
+	
+	//ManyToOne relationships
+	@ManyToOne
+	@JoinColumn(name = "district_id", nullable = false)
+	private District district;
+	
+	
 	
 
 }

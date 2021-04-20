@@ -25,11 +25,15 @@ public class Admin {
 
 	@Column(name = "description", length = 60)
 	private String description;
-
+	
+	//OneToMany relationships
+	@OneToMany(mappedBy = "admin")
+	private List<Studio> studios;
+	
+	//ManyToOne relationships
 	@ManyToOne
 	@JoinColumn(name = "district_id", nullable = false)
 	private District district;
 
-	@OneToMany(mappedBy = "admin")
-	private List<Studio> studios;
+	
 }
