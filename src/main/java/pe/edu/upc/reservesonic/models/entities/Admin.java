@@ -1,5 +1,6 @@
 package pe.edu.upc.reservesonic.models.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -34,6 +35,61 @@ public class Admin {
 	@ManyToOne
 	@JoinColumn(name = "district_id", nullable = false)
 	private District district;
+	
+	//Constructor, getters & setters
+	public Admin() {
+		studios = new ArrayList<Studio>();
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public List<Studio> getStudios() {
+		return studios;
+	}
+
+	public void setStudios(List<Studio> studios) {
+		this.studios = studios;
+	}
+
+	public District getDistrict() {
+		return district;
+	}
+
+	public void setDistrict(District district) {
+		this.district = district;
+	}
+	
+	
 
 	
 }

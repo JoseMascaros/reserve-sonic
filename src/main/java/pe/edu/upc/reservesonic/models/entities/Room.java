@@ -1,5 +1,6 @@
 package pe.edu.upc.reservesonic.models.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -29,6 +30,42 @@ public class Room {
 	@JoinColumn(name = "studio_id")
 	private Studio studio;
 	
+	//Constructor, getters & setters
+	public Room() {
+		instruments = new ArrayList<Instrument>();
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public Integer getCapacity() {
+		return capacity;
+	}
+
+	public void setCapacity(Integer capacity) {
+		this.capacity = capacity;
+	}
+
+	public List<Instrument> getInstruments() {
+		return instruments;
+	}
+
+	public void setInstruments(List<Instrument> instruments) {
+		this.instruments = instruments;
+	}
+
+	public Studio getStudio() {
+		return studio;
+	}
+
+	public void setStudio(Studio studio) {
+		this.studio = studio;
+	}
 	
 	
 }
