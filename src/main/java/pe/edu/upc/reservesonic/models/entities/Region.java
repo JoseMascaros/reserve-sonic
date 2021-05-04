@@ -25,6 +25,7 @@ public class Region {
 	
 	//Constructor, getters & setters
 	public Region() {
+		super();
 		//districts = new ArrayList<District>();
 	}
 
