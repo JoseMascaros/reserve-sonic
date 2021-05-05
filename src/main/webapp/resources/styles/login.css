@@ -34,11 +34,12 @@ button{
 
 .register{
 	background-color: #FC5E32 !important;
+	max-width: 330px !important;
 }
 .login{
 	color:#FC5E32 !important;
 	font-family: 'Ubuntu', sans-serif !important;
 	font-weight: 500 !important;
 	font-size: 18px;
-	cursor: pointer;
+
 }
