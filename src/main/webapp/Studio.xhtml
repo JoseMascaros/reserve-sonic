@@ -19,44 +19,44 @@
 		class="navbar-brand logo" href="Home.xhtml">Reserve Sonic</a> </nav>
 	<div class="container pt-5">
 		<div class="row align-items-center">
+		
+		
+		
 			<!-- INGRESO DE ESTUDIO-->
 			<div class="col">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="form-group">
-						<h:outputLabel for="name" value="Search"
-							styleClass="control-label" />
-						<p:inputText autocomplete="off" id="name"
-							styleClass="form-control"
-							value="#{regionController.region.name}" maxlength="120" />
-					</div>
-				</div>
+				<h:form>
 
-				<div class="col-sm-8 text-right">
-					<div class="form-group box-main-btn">
-						<span style="display: block; height: 30px;"></span>
-						
-						<p:commandButton value="Clear" update="lstRegion"
-							actionListener="#{regionController.clear()}"
-							styleClass="btn btn-default" ajax="false" />
-							
-						<p:commandButton value="Search" update="lstRegion"
-							actionListener="#{regionController.findByName()}"
-							styleClass="btn btn-default btn-border" ajax="true" />
-							
-						<p:commandButton value="New"
-							action="#{regionController.newRegion()}"
-							styleClass="btn btn-danger" ajax="false" />
-					</div>
-				</div>
-			</div></div>
+					<h:outputLabel for="idStudio" value="Id "
+						styleClass="control-label" />
+					<p:inputText autocomplete="off" id="idStudio"
+						styleClass="form-control" value="#{studioController.studio.id}" />
+
+					<h:outputLabel for="nameRegion" value="Nombres "
+						styleClass="control-label" />
+					<p:inputText autocomplete="off" id="nameStudio"
+						styleClass="form-control" value="#{studioController.studio.name}"
+						maxlength="30" required="true" />
+
+					<br />
+
+					<p:commandButton value="Save"
+						actionListener="#{studioController.insert()}"
+						styleClass="btn btn-primary " update="@form"
+						/>
+
+					<p:commandButton value="Cancel"
+						immediate="true"
+						styleClass="btn btn-default" ajax="false" />
+
+				</h:form>
+			</div>
 			<!-- VISTA DE ESTUDIO-->
 			<div class="col">
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="form-group table-responsive box-table-class">
-							<p:dataTable id="lstRegion" var="reg"
-								value="#{regionController.regionList}" paginator="true"
+							<p:dataTable id="listStudio" var="studio"
+								value="#{studioController.studioList}" paginator="true"
 								paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
 								rows="10" styleClass="table table-bordered"
 								emptyMessage="Empty table" rowIndexVar="item"
@@ -64,18 +64,18 @@
 
 
 								<p:column headerText="Id">
-									<h:outputText value="#{reg.id}" />
+									<h:outputText value="#{studio.id}" />
 								</p:column>
 
 
-								<p:column headerText="Region">
-									<h:outputText value="#{reg.name}" />
+								<p:column headerText="Studio Name">
+									<h:outputText value="#{studio.name}" />
 								</p:column>
 
 
-								<p:column headerText="Operations">
-									<h:commandLink action="lstRegion" value="Delete"
-										actionListener="#{regionController.delete(reg)}" />
+								<p:column headerText="Delete">
+									<h:commandLink action="listStudio" value="Delete"
+										actionListener="#{studioController.delete(studio)}" />
 								</p:column>
 
 							</p:dataTable>
