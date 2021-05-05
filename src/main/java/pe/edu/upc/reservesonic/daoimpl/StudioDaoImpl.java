@@ -39,6 +39,7 @@ public class StudioDaoImpl implements IStudioDao {
 		return list;
 	}
 
+	@Transactional
 	@Override
 	public void delete(Integer id) {
 		Studio stu = new Studio();

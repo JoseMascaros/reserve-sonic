@@ -19,9 +19,9 @@
 		class="navbar-brand logo" href="Home.xhtml">Reserve Sonic</a> </nav>
 	<div class="container pt-5">
 		<div class="row align-items-center">
-		
-		
-		
+
+
+
 			<!-- INGRESO DE ESTUDIO-->
 			<div class="col">
 				<h:form>
@@ -39,49 +39,50 @@
 
 					<br />
 
-					<p:commandButton value="Save"
+					<h:commandButton value="Save"
 						actionListener="#{studioController.insert()}"
-						styleClass="btn btn-primary " update="@form"
-						/>
+						styleClass="btn btn-primary " update="listStudio" />
 
-					<p:commandButton value="Cancel"
+					<!-- <p:commandButton value="Cancel"
 						immediate="true"
-						styleClass="btn btn-default" ajax="false" />
+						styleClass="btn btn-default" ajax="false" /> -->
 
 				</h:form>
 			</div>
 			<!-- VISTA DE ESTUDIO-->
 			<div class="col">
-				<div class="row">
-					<div class="col-sm-12">
-						<div class="form-group table-responsive box-table-class">
-							<p:dataTable id="listStudio" var="studio"
-								value="#{studioController.studioList}" paginator="true"
-								paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
-								rows="10" styleClass="table table-bordered"
-								emptyMessage="Empty table" rowIndexVar="item"
-								style="margin-bottom:0">
+				<h:form>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group table-responsive box-table-class">
+								<p:dataTable id="listStudio" var="studio"
+									value="#{studioController.studioList}" paginator="true"
+									paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+									rows="10" styleClass="table table-bordered"
+									emptyMessage="Empty table" rowIndexVar="item"
+									style="margin-bottom:0">
 
 
-								<p:column headerText="Id">
-									<h:outputText value="#{studio.id}" />
-								</p:column>
+									<p:column headerText="Id">
+										<h:outputText value="#{studio.id}" />
+									</p:column>
 
 
-								<p:column headerText="Studio Name">
-									<h:outputText value="#{studio.name}" />
-								</p:column>
+									<p:column headerText="Studio Name">
+										<h:outputText value="#{studio.name}" />
+									</p:column>
 
 
-								<p:column headerText="Delete">
-									<h:commandLink action="listStudio" value="Delete"
-										actionListener="#{studioController.delete(studio)}" />
-								</p:column>
+									<p:column headerText="Delete">
+										<h:commandLink action="listStudio" value="Delete"
+											actionListener="#{studioController.delete(studio)}" />
+									</p:column>
 
-							</p:dataTable>
+								</p:dataTable>
+							</div>
 						</div>
 					</div>
-				</div>
+				</h:form>
 			</div>
 		</div>
 	</div>

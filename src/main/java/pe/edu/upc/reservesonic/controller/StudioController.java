@@ -36,6 +36,8 @@ public class StudioController {
 	public void insert() {
 		try {
 			sService.insert(studio);
+			this.list();
+			this.studio = new Studio();
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
