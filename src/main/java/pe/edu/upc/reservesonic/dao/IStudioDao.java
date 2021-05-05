@@ -10,5 +10,5 @@ public interface IStudioDao {
 	
 	public List<Studio> list();
 	
-	public void delete(String id);
+	public void delete(Integer id);
 }

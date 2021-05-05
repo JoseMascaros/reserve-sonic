@@ -39,8 +39,9 @@ public class StudioDaoImpl implements IStudioDao {
 		return list;
 	}
 
+	@Transactional
 	@Override
-	public void delete(String id) {
+	public void delete(Integer id) {
 		Studio stu = new Studio();
 		try {
 			stu = em.getReference(Studio.class, id);

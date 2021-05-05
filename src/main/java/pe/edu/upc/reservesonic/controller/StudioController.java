@@ -28,14 +28,16 @@ public class StudioController {
 		this.list();
 	}
 	
-	public String newStudio() {
-		this.setStudio(new Studio());
-		return "Studio.xhtml";
-	}
+	/*
+	 * public String newStudio() { this.setStudio(new Studio()); return
+	 * "Studio.xhtml"; }
+	 */
 	
 	public void insert() {
 		try {
 			sService.insert(studio);
+			this.list();
+			this.studio = new Studio();
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
