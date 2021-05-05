@@ -30,15 +30,15 @@ public class Studio {
 	
 	//ManyToOne relationships
 	@ManyToOne
-	@JoinColumn(name = "district_id", nullable = false)
+	@JoinColumn(name = "district_id")
 	private District district;
 	
 	@ManyToOne
-	@JoinColumn(name = "reservation_id", nullable = false)
+	@JoinColumn(name = "reservation_id")
 	private Reservation reservation;
 	
 	@ManyToOne
-	@JoinColumn(name = "admin_id", nullable = false)
+	@JoinColumn(name = "admin_id")
 	private Admin admin;
 	
 	//Constructor, getters & setters
