@@ -39,7 +39,7 @@ public class RoomController {
 	// Specialized Methods
 	public String newRoom() {
 		this.setRoom(new Room());
-		return "room.xhtml";
+		return "Room.xhtml";
 	}
 	
 	public void insert() {
