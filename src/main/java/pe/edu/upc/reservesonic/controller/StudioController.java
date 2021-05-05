@@ -8,6 +8,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import pe.edu.upc.reservesonic.models.entities.Room;
 import pe.edu.upc.reservesonic.models.entities.Studio;
 import pe.edu.upc.reservesonic.service.IStudioService;
 
@@ -25,6 +26,11 @@ public class StudioController {
 		this.studio = new Studio();
 		this.studioList = new ArrayList<Studio>();
 		this.list();
+	}
+	
+	public String newStudio() {
+		this.setStudio(new Studio());
+		return "Studio.xhtml";
 	}
 	
 	public void insert() {
