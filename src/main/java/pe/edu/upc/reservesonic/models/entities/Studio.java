@@ -12,11 +12,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Studios")
+@Table(name = "studios")
 public class Studio {
 	@Id
-	@Column(name = "studio_id", length = 2, nullable = false)
-	private String id;
+	@Column(name = "studio_id")
+	private Integer id;
 
 	@Column(name = "name", length = 40)
 	private String name;
@@ -46,12 +46,17 @@ public class Studio {
 		rooms = new ArrayList<Room>();
 		reviews = new ArrayList<Review>();
 	}
+	
+	public Studio(Integer id, String name) {
+		this.id = id;
+		this.name = name;
+	}
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

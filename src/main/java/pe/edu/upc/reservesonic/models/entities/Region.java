@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Regions")
+@Table(name = "regions")
 public class Region {
 	@Id
 	@Column(name = "region_id", length = 5, nullable = false)

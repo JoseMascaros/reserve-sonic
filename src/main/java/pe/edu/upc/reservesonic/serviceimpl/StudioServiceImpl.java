@@ -2,12 +2,15 @@ package pe.edu.upc.reservesonic.serviceimpl;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import pe.edu.upc.reservesonic.dao.IStudioDao;
 import pe.edu.upc.reservesonic.models.entities.Studio;
 import pe.edu.upc.reservesonic.service.IStudioService;
 
 public class StudioServiceImpl implements IStudioService {
 	
+	@Inject
 	private IStudioDao sDao;
 	
 	@Override
@@ -21,7 +24,7 @@ public class StudioServiceImpl implements IStudioService {
 	}
 
 	@Override
-	public void delete(String id) {
+	public void delete(Integer id) {
 		sDao.delete(id);
 	}
 	

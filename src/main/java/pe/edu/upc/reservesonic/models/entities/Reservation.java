@@ -18,7 +18,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "Reservations")
+@Table(name = "reservations")
 @SequenceGenerator(name = "genReservationId", initialValue = 1, allocationSize = 1)
 public class Reservation {
 	
