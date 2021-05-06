@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Instrument {
 	@Id
 	@Column(name = "instrument_id", length = 5, nullable = false)
-	private String id;
+	private Integer id;
 
 	@Column(name = "name", length = 20, nullable = false)
 	private String name;
@@ -20,7 +20,7 @@ public class Instrument {
 	@Column(name = "brand", length = 20, nullable = false)
 	private String brand;
 	
-	@Column(name = "description", length = 120, nullable = false)
+	@Column(name = "description", length = 120)
 	private String description;
 	
 	//ManyToOne relationships
@@ -30,14 +30,14 @@ public class Instrument {
 	
 	//Constructor, getters & setters
 	public Instrument() {
-		//To do
+		super();
 	}
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
