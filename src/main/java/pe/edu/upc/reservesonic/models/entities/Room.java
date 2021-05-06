@@ -15,8 +15,8 @@ import javax.persistence.Table;
 @Table(name = "rooms")
 public class Room {
 	@Id
-	@Column(name = "room_id", length = 5, nullable = false)
-	private String id;
+	@Column(name = "room_id")
+	private Integer id;
 
 	@Column(name = "capacity", length = 2, nullable = false)
 	private Integer capacity;
@@ -32,14 +32,15 @@ public class Room {
 	
 	//Constructor, getters & setters
 	public Room() {
-		instruments = new ArrayList<Instrument>();
+		super();
+//		instruments = new ArrayList<Instrument>();
 	}
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

@@ -28,7 +28,7 @@ public class RoomServiceImpl implements IRoomService {
 	}
 
 	@Override
-	public void delete(String id) {
+	public void delete(Integer id) {
 		rDao.delete(id);
 	}
 

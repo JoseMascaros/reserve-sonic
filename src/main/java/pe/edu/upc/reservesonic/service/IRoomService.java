@@ -10,5 +10,5 @@ public interface IRoomService {
 
 	public List<Room> list();
 
-	public void delete(String id);
+	public void delete(Integer id);
 }
