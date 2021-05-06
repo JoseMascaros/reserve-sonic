@@ -16,56 +16,54 @@ import pe.edu.upc.reservesonic.service.IStudioService;
 @Named
 @RequestScoped
 public class RoomController {
-	
+
 	@Inject
 	private IRoomService rService;
-	
+
 	@Inject
 	private IStudioService sService;
-	
+
 	private Room room;
 	List<Room> roomList;
 	List<Studio> studioList;
-	
-	//Constructor
+
+	// Constructor
 	@PostConstruct
 	public void init() {
 		this.room = new Room();
 		roomList = new ArrayList<Room>();
 		studioList = new ArrayList<Studio>();
-		
+		this.listRoom();
+		this.listStudio();
 	}
-	
+
 	// Specialized Methods
-	public String newRoom() {
-		this.setRoom(new Room());
-		return "Room.xhtml";
-	}
-	
 	public void insert() {
 		try {
 			rService.insert(room);
+			this.listRoom();
+			this.room = new Room();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	public void listRoom() {
 		try {
 			roomList = rService.list();
-		}catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	public void listStudio() {
 		try {
 			studioList = sService.list();
-		}catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	public void delete(Room room) {
 		try {
 			rService.delete(room.getId());
@@ -74,8 +72,8 @@ public class RoomController {
 			System.out.println(e.getMessage());
 		}
 	}
-	
-	//Getters & Setters
+
+	// Getters & Setters
 	public Room getRoom() {
 		return room;
 	}
@@ -99,8 +97,5 @@ public class RoomController {
 	public void setStudioList(List<Studio> studioList) {
 		this.studioList = studioList;
 	}
-	
-	
-	
-	
+
 }

@@ -43,7 +43,7 @@ public class RoomDaoImpl implements IRoomDao {
 
 	@Transactional
 	@Override
-	public void delete(String id) {
+	public void delete(Integer id) {
 		Room room = new Room();
 
 		try {
