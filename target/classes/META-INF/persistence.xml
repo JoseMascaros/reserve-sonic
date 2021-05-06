@@ -3,9 +3,18 @@
 	
 	<persistence-unit name="reserve-sonicPU" transaction-type="JTA">
 		<jta-data-source>java:/ReserveSonicDS</jta-data-source>
+		<class>pe.edu.upc.reservesonic.models.entities.Admin</class>
+		<class>pe.edu.upc.reservesonic.models.entities.District</class>
+		<class>pe.edu.upc.reservesonic.models.entities.Instrument</class>
+		<class>pe.edu.upc.reservesonic.models.entities.Region</class>
+		<class>pe.edu.upc.reservesonic.models.entities.Reservation</class>
+		<class>pe.edu.upc.reservesonic.models.entities.Review</class>
+		<class>pe.edu.upc.reservesonic.models.entities.Room</class>
+		<class>pe.edu.upc.reservesonic.models.entities.Studio</class>
+		<class>pe.edu.upc.reservesonic.models.entities.User</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
-			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+			<property name="javax.persistence.schema-generation.database.action" value="update"/>
 		</properties>
 	</persistence-unit>
 </persistence>
